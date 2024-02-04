@@ -1,0 +1,90 @@
+$wraper:4vh 16vw;
+$items:100%;
+$main-color:#BE3144;;
+$texts-color:#22092C;
+@mixin flex($justify-content,$align-items){
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+@mixin buttons($width,$height){
+    @include flex(center,center);
+    width: $width;
+    height: $height ;
+    font-family: 'Roboto', sans-serif;
+    padding: 1%;
+    border-radius: 15px;
+    transition: all 0.2s ease;
+    background-color: $sub-color ;
+}
+@mixin button-hover{
+    background-color: #872341;
+    cursor: pointer;
+    border-bottom: #22092C solid 1px;
+}
+main{
+    .hero{
+        padding: $wraper;
+        header{
+            nav{
+                width: $items;
+                height: 10vh;
+                @include flex(center,center);
+                border-radius: 20px;
+                background-color: $main-color;
+                ul{
+                    width: $items;
+                    @include flex(space-around,center);
+                    li{
+                        @include flex(center,center);
+                        @include buttons(10%,3%);
+                        a{
+                            color: $texts-color;
+                        }
+                    }
+                    li:hover{
+                        @include button-hover;
+                    }
+                    button{
+                        @include buttons(10%,3%);
+                        border: none;
+                        font-size: 16px;
+                    }
+                    button:hover{
+                        @include button-hover;
+                    }
+                }
+            }
+            .cart{
+                width: $items;
+                height: 40vh;
+                padding: 1%;
+                @include flex(center,center);
+                margin-top: 50px;
+                background-color: $main-color;
+                border-radius: 20px;
+                .left-part{
+                    @include flex(space-evenly,space-between);
+                    flex-direction: column;
+                    width: 50%;
+                    height: 100%;
+                    button{
+                        @include buttons(30%,15%);
+                        border: none;
+                        font-size: 16px;
+                    }
+                    button:hover{
+                        @include button-hover;
+                    }
+                }
+                .right-part{
+                    width: 50%;
+                    height: 100%;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "npm": "^10.2.4",
+    "sass": "^1.69.5"
+  },
+  "name": "tyr-sass",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sass --watch ./style/main.scss ./style/style.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
